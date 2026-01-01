@@ -22,17 +22,17 @@ Cold Items: A custom G-Score Fallback that utilizes genre-based content averages
 
 I compared three stages of the recommendation pipeline to prove the value of the SVD and Hybrid logic.
 
-================================================================================
-📈 FINAL MODEL PERFORMANCE REPORT
-================================================================================
-Metric               | Baseline (Bias-Only) | SVD (Optimized)      | % Improvement  
------------------------------------------------------------------------------------
-RMSE (Error)         | 0.8641               | 0.7772               |         10.06%
-Precision@10         | 0.3337               | 0.4290               |         28.56%
-Recall@10            | 0.3033               | 0.3744               |         23.44%
------------------------------------------------------------------------------------
+### 📈 Final Model Performance Report
+
+| Metric        | Baseline (Bias-Only) | SVD (Optimized) | % Improvement |
+|--------------|----------------------|-----------------|---------------|
+| RMSE (Error) | 0.8641               | 0.7772          | 10.06%        |
+| Precision@10 | 0.3337               | 0.4290          | 28.56%        |
+| Recall@10    | 0.3033               | 0.3744          | 23.44%        |
+
 
 ❄️ COLD START PERFORMANCE (Hybrid Logic)
+
 Standard SVD RMSE (Cold Set):  1.2685
 Hybrid Fallback RMSE (Cold Set): 0.9532
 Hybrid Improvement: 24.85%
@@ -49,9 +49,8 @@ Hybrid Improvement: 24.85%
 ├── eda.ipynb               # Evaluation plots and metrics
 ├── main.py                 # Entry point for the hybrid system
 ├── collaborative_filtering.ipynb
-|-- gitignore              # Prevents pushing large CSVs
-└──requirements.txt        # Reproducibility (numpy==1.26.4, etc.)
-
+├── gitignore              # Prevents pushing large CSVs
+└── requirements.txt        # Reproducibility (numpy==1.26.4, etc.)
 
 
 🛠️ Technical Implementation Highlights
@@ -66,6 +65,6 @@ Data Engineering: Extracted temporal features (Release Year) and engineered a Ge
 
 The current SVD architecture is time-agnostic (Temporal Drift issue). The next iteration involves a Two-Tower Neural Network (DLRM) using TensorFlow Recommenders to incorporate sequential interaction data and non-linear feature crossings.
 
-Author: [Your Name]
+Author: Priyanka
 
 Stack: Python, Pandas, Scikit-Surprise, NumPy, Matplotlib/Seaborn
